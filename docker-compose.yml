@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:6.0.3
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+  mongodb-test:
+    image: mongo:6.0.3
+    ports:
+      - "27018:27017"
+volumes:
+  mongodb:
+    driver: local
